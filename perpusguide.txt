@@ -1,0 +1,7 @@
+ADMIN 
+username : admin 
+password : admin 
+
+SISWA 
+username : siswa 
+password : siswa 

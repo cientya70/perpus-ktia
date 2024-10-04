@@ -111,10 +111,11 @@ $result = $conn->query($sql);
             <td><?php echo htmlspecialchars($borrow['nis']); ?></td>
             <td><?php echo htmlspecialchars($borrow['gender']); ?></td>
             <td><?php echo htmlspecialchars($borrow['title']); ?></td>
+            <td><?php echo htmlspecialchars(date('Y-m-d', strtotime($borrow['borrow_date'])));?></td>
             <td>
-                <?php 
-                echo htmlspecialchars(date('Y-m-d', strtotime($borrow['borrow_date'])));
-                ?>
+                <?php if (!empty($borrow['pdf_path'])): ?>
+                     <a href="<?php echo htmlspecialchars($borrow['pdf_path']); ?>" target="_blank">Download PDF</a>
+                <?php endif; ?>
             </td>
         </tr>
     <?php endwhile; ?>
